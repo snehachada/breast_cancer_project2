@@ -32,4 +32,35 @@ CREATE TABLE tumor(
 	concave_points_worst FLOAT,
 	symmetry_worst FLOAT,
 	fractal_dimension_worst FLOAT
-)
+);
+
+
+DROP TABLE IF EXISTS tumor_first_set;
+CREATE TABLE tumor_first_set AS
+SELECT *
+FROM tumor
+WHERE radius_mean BETWEEN 6.5 and 10.9;
+
+DROP TABLE IF EXISTS tumor_second_set;
+CREATE TABLE tumor_second_set AS
+SELECT *
+FROM tumor
+WHERE radius_mean BETWEEN 10.91 and 15.3;
+
+DROP TABLE IF EXISTS tumor_third_set;
+CREATE TABLE tumor_third_set AS
+SELECT *
+FROM tumor
+WHERE radius_mean BETWEEN 15.31 and 19.7;
+
+DROP TABLE IF EXISTS tumor_fourth_set;
+CREATE TABLE tumor_fourth_set AS
+SELECT *
+FROM tumor
+WHERE radius_mean BETWEEN 19.71 and 24.1;
+
+DROP TABLE IF EXISTS tumor_fifth_set;
+CREATE TABLE tumor_fifth_set AS
+SELECT *
+FROM tumor
+WHERE radius_mean BETWEEN 24.11 and 28.5;
